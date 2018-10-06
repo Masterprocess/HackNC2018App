@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->decimal('longitude', 10, 7);
             $table->decimal('latitude', 10, 7);
+            $table->integer('age')->unsigned();
+            $table->string('occupation');
+            $table->text('bio');
             $table->rememberToken();
             $table->timestamps();
         });

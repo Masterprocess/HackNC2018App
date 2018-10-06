@@ -22,6 +22,7 @@ class CreatePetsTable extends Migration
             $table->decimal('longitude', 10, 7);
             $table->decimal('latitude', 10, 7);
             $table->text('description');
+            $table->boolean('adopted')->default(false);
             $table->timestamps();
         });
     }
