@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    View a list of pets.
                 </div>
             </div>
         </div>
