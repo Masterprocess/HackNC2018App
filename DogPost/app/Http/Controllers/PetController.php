@@ -21,7 +21,8 @@ class PetController extends Controller
     public function index()
     {
         $pets = Pet::where('adopted', '=', false)->orderBy('created_at', 'desc');
-        return view('feed', ['pets' => $pets]);
+        //return view("home", ['pets' => $pets]);
+        return "all pets";
 
     }
 
@@ -60,7 +61,8 @@ class PetController extends Controller
 
             $pet->save();
 
-            return redirect()->route('allPets');
+            //return redirect()->route('allPets');
+            return "all pets";
         }
     }
 
@@ -76,7 +78,7 @@ class PetController extends Controller
 
         if ($pet)
         {
-            return view('petDetail', ['pet' => $pet])
+            return view('petDetails', ['pet' => $pet]);
         }
         else
         {

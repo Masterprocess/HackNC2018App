@@ -1,23 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    View a list of pets.
-                </div>
-            </div>
-        </div>
-    </div>
+@auth
+<div class = "col-md-6">
+	<button href = "{{ route('createPetPost') }}">Creae Pet Post</button>
 </div>
+@endAuth
+
+@foreach($pets as $pet)
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><a href = "{{ route('petDetails', $pet->id) }}">{{ $pet->name }}</a></h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ $pet->type }}</h6>
+    <p class="card-text">{{ $pet->description }}</p>
+  </div>
+</div>
+@endforeach
+
 @endsection

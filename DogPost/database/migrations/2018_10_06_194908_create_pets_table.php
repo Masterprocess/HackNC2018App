@@ -19,8 +19,8 @@ class CreatePetsTable extends Migration
             $table->string('type');
             $table->integer('age')->unsigned();
             $table->string('breed');
-            $table->decimal('longitude', 10, 7);
-            $table->decimal('latitude', 10, 7);
+            $table->decimal('longitude', 10, 7)->default(0);
+            $table->decimal('latitude', 10, 7)->default(0);
             $table->text('description');
             $table->boolean('adopted')->default(false);
             $table->timestamps();
