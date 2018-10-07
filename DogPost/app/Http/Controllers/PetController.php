@@ -20,8 +20,8 @@ class PetController extends Controller
      */
     public function index()
     {
-        $pets = Pet::where('adopted', '=', false);
-        return view('home', ['pets' => $pets]);
+        $pets = Pet::where('adopted', '=', false)->orderBy('created_at', 'desc');
+        return view('feed', ['pets' => $pets]);
 
     }
 

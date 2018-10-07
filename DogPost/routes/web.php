@@ -12,6 +12,10 @@
 */
 
 Route::get('/', 'LandingPageController@welcome')->name('welcome');
+Route::get('/pets', 'PetController@index')->name('allPetes');
+Route::get('/pet/{$id}', "PetController@show")->name('petDetails');
+Route::get('/pet/create', 'PetController@create')->name('createPetPost');
+
 
 Auth::routes();
 
